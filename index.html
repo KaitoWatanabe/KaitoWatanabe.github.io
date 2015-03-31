@@ -3,24 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <title>Design for Web Programing</title>
+  <link rel="stylesheet" href="default.css">
   <link rel="stylesheet" href="style.css">
+  <script src="jquery.js"></script>
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+  <div class="view">
   <form action="" class="form-1">
     <p><input type="text" placeholder="お名前"></p>
     <p><input type="text" placeholder="メッセージ"></p>
     <p><input type="submit"></p>
   </form>
+</div>
+<div class="code">
+  <pre><code class="css">
+    input:focus {
+      outline: 0;
+    }
+    .form{
+      background: #F44336;
+      padding: 16px;
+    }
+    .form input::-webkit-input-placeholder {
+        color: #f9f9f9;
+    }
+    .form input:not([type="submit"]){
+      border: 0;
+      border-bottom: 1px dashed #D32F2F;
+      padding: 8px;
+      width: 300px;
+      background: #F44336;
+      color: #f9f9f9;
+      font-size: 16px;
+    }
+    .form input[type="submit"]{
+      border: 0;
+      background: #F44336;
+      color: #f9f9f9;
+      border: 4px solid #f9f9f9;
+      padding: 4px 32px;
+      font-size: 12px;
+      margin-top: 16px;
+    }
+  </code></pre>
+
+</div>
+<div class="view">
   <form action="" class="form-2">
     <p><input type="text" placeholder="お名前"></p>
     <p><input type="text" placeholder="メッセージ"></p>
     <p><input type="submit"></p>
   </form>
+</div>
+<div class="code">
+  <pre><code class="css">
+    input:focus {
+      outline: 0;
+    }
+    form{
+      background: #fff;
+      padding: 16px;
+    }
+
+    form input::-webkit-input-placeholder {
+        color: #727272;
+    }
+
+    form input:not([type="submit"]){
+      border: 0;
+      border-radius: 4px;
+      padding: 8px;
+      width: 300px;
+      background: #B3E5FC;
+      color: #212121;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    form input[type="submit"]{
+      border: 0;
+      background: #03A9F4;
+      color: #fff;
+      border: 4px solid #f9f9f9;
+      padding: 4px 32px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+  </code></pre>
+</div>
+<div class="view">
   <form action="" class="form-3">
     <p><input type="text" placeholder="お名前"></p>
     <p><input type="text" placeholder="メッセージ"></p>
     <p><input type="submit"></p>
   </form>
+</div>
+<div class="code">
+  <pre><code class="css">
+    input:focus {
+      outline: 0;
+    }
+    form{
+      background: #fff;
+      padding: 16px;
+    }
+
+    form input::-webkit-input-placeholder {
+        color: #727272;
+    }
+
+    form input:not([type="submit"]){
+      border: 0;
+      border: 4px solid #4CAF50;
+      padding: 8px;
+      width: 80%;
+      color: #212121;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    form input[type="submit"]{
+      border: 0;
+      background: #4CAF50;
+      color: #fff;
+      border: 4px solid #f9f9f9;
+      padding: 4px 32px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+  </code></pre>
+</div>
+<div class="view">
   <div class="post-1">
     <img src="http://lorempixel.com/40/40/animals" alt="">
     <h2>Kaito Watanabe</h2>
@@ -29,6 +146,13 @@
     <a href="#">編集</a>
     <a href="#">削除</a>
   </div>
+</div>
+<div class="code">
+  <pre><code class="css">
+
+  </code></pre>
+</div>
+<div class="view">
   <div class="post-2">
     <h2>Kaito Watanabe</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nulla iure, molestiae nisi laborum soluta maiores debitis officiis numquam quos quam possimus quis voluptatem architecto, esse dolorem itaque provident, excepturi.</p>
@@ -36,6 +160,13 @@
     <a href="#">編集</a>
     <a href="#">削除</a>
   </div>
+</div>
+<div class="code">
+  <pre><code class="css">
+
+  </code></pre>
+</div>
+<div class="view">
   <div class="post-3">
     <img src="http://lorempixel.com/480/240/animals" alt="">
     <div class="card">
@@ -46,5 +177,20 @@
       <a href="#">削除</a>
     </div>
   </div>
+</div>
+<script>
+  $('.code').each(function(){
+    $(this).append($('<a class="close">').text('x'));
+  })
+  $('.view').each(function(){
+    $(this).append($('<a class="show-code">').text('code'));
+  })
+  $(document).on('click', '.show-code', function(){
+    $(this).parent('.view').next('.code').fadeToggle(400);
+  });
+  $(document).on('click', '.close', function(){
+    $(this).parent('.code').fadeToggle(400);
+  });
+</script>
 </body>
 </html>

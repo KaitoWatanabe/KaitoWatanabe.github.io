@@ -2,15 +2,42 @@
   margin: 0;
   padding: 0;
   font-family: "游ゴシック", "Yu Gothic", YuGothic, sans-serif;
+  box-sizing: border-box;
 }
 
 input:focus {
   outline: 0;
 }
-
-form{
-  width: 480px;
+.view{
+  width: 50%;
   float: left;
+  position: relative;
+}
+.code{
+  width: 50%;
+  float: left;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+.show-code{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #555;
+  color: #f9f9f9;
+  padding: 2px 8px;
+}
+.close{
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 24px;
+}
+form{
+  width: 100%;
 }
 
 .form-1{
@@ -105,7 +132,6 @@ form{
   width: 480px;
   padding: 16px;
   box-shadow: 0 0 1px #B6B6B6;
-  float: left;
 }
 .post-1 img{
   float: left;
@@ -132,7 +158,6 @@ form{
 .post-2{
   width: 480px;
   padding: 16px;
-  float: left;
   position: relative;
   background: #FFC107;
   border-radius: 4px;
@@ -172,7 +197,6 @@ form{
 .post-3{
   width: 480px;
   box-shadow: 0 0 1px #B6B6B6;
-  float: left;
 }
 .post-3 img{
   float: left;
